@@ -8,6 +8,7 @@
   "dependencies": {
     "@cap-js/postgres": "^1.13.0",
     "@sap/cds": "^8",
+    "@sap/xssec": "^4.6.0",
     "express": "^4"
   },
   "devDependencies": {
@@ -20,6 +21,9 @@
   },
   "cds": {
     "requires": {
+      "auth": {
+      "kind": "mocked"
+      },
       "[sqlite]": {
         "db": {
           "kind": "sqlite",
@@ -32,16 +36,10 @@
       "[pg]": {
         "db": {
           "kind": "postgres",
-          "impl": "@cap-js/postgres",
-          "credentials": {
-            "host": "localhost",
-            "port": "5433",
-            "user": "postgres",
-            "password": "admin",
-            "database": "postgres"
-          }
+          "impl": "@cap-js/postgres"
         }
       }
+
     }
   }
 }
